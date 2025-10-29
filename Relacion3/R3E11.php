@@ -8,7 +8,7 @@
 <body class="bg-light">
     <div class="container mt-5">
         <div class="card shadow p-4">
-            <h2 class="text-primary text-center mb-4">Invertir array de números</h2>
+            <h1 class="text-primary text-center mb-4">Invertir array de números</h1>
             <form method="post">
                 <div class="mb-3">
                     <label for="numeros" class="form-label">Introduzca números separados por comas:</label>
