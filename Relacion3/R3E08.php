@@ -40,7 +40,7 @@
                 }
             </script>
             
-            <h2 class="text-center text-primary mb-4">Conversor de Texto</h2>
+            <h1 class="text-center text-primary mb-4">Conversor de Texto</h1>
 
             <ul class="nav nav-tabs mb-3" id="myTab" role="tablist">
                 <li class="nav-item" role="presentation">
