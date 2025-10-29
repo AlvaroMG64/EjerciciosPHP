@@ -13,18 +13,33 @@
                 <form method="post" class="row g-3">
                     <div class="col-md-6 offset-md-3">
                         <label for="texto" class="form-label">Introduzca un texto:</label>
-                        <input type="text" class="form-control" id="texto" name="texto" required>
+                        <input type="text" class="form-control" id="texto" name="texto" placeholder="Escriba una frase" required>
                     </div>
                     <div class="col-12 text-center">
-                        <button type="submit" class="btn btn-success mt-3">Enviar</button>
+                        <button type="submit" class="btn btn-success w-100 mt-3">Mostrar palabra más larga</button>
                     </div>
                 </form>
             </div>
-            
-            <h1 class="text-center text-primary mb-4">-</h1>
 
             <?php
-
+                if ($_SERVER["REQUEST_METHOD"] === "POST") {
+                    $texto = trim($_POST["texto"]);
+                    if ($texto === "") {
+                        echo "<div class='alert alert-danger mt-3'>Por favor, introduzca un texto</div>";
+                    } else {
+                        // Separar las palabras por espacios
+                        $palabras = preg_split('/\s+/', $texto);
+                        $palabraMasLarga = "";
+                        foreach ($palabras as $palabra) {
+                            if (strlen($palabra) > strlen($palabraMasLarga)) {
+                                $palabraMasLarga = $palabra;
+                            }
+                        }
+                        echo "<div class='alert alert-success mt-3'>
+                                <strong>Palabra más larga:</strong> $palabraMasLarga
+                            </div>";
+                    }
+                }
             ?>
         </div>
     </div>

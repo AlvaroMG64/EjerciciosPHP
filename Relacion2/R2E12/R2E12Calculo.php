@@ -13,21 +13,21 @@
     <div class="container m-auto bg-white vh-100">
         <h1 class="p-5 text-center">Cálculo de notas a partir de calificaciones y faltas</h1>
         <?php
-        $nota1 = $_GET['nota1'];
-        $nota2 = $_GET['nota2'];
-        $faltas = $_GET['faltas'];
-        $nombre = $_GET['nombre'];
-        $email = $_GET['email'];
+            $nota1 = $_GET['nota1'];
+            $nota2 = $_GET['nota2'];
+            $faltas = $_GET['faltas'];
+            $nombre = $_GET['nombre'];
+            $email = $_GET['email'];
 
-        $notaFinal = (int) round(($nota1 + $nota2) / 2 - $faltas * 0.25); // la redondeamos al entero más próximo
+            $notaFinal = (int) round(($nota1 + $nota2) / 2 - $faltas * 0.25); // la redondeamos al entero más próximo
 
-        echo "<h3>Nota final de $nombre: ", $notaFinal, "</h3>";
-        $barra = $notaFinal * 10; // la escalamos para que esté entre 0 y 100 en la barra que se muestra
-        $color = match ($notaFinal) {  // elegimos el color de barra en función de la nota
-            1, 2, 3, 4 => "text-bg-danger",
-            5, 6 => "text-bg-warning",
-            7, 8, 9, 10 => "text-bg-success",
-        }
+            echo "<h3>Nota final de $nombre: ", $notaFinal, "</h3>";
+            $barra = $notaFinal * 10; // la escalamos para que esté entre 0 y 100 en la barra que se muestra
+            $color = match ($notaFinal) {  // elegimos el color de barra en función de la nota
+                1, 2, 3, 4 => "text-bg-danger",
+                5, 6 => "text-bg-warning",
+                7, 8, 9, 10 => "text-bg-success",
+            }
         ?>
         <!-- mostramos el component de bootstrap PROGRESS BAR parametrizando la longitud de la barra con
              el resultado de la nota, y también el color, según el intervalo -->

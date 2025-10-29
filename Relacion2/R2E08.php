@@ -70,52 +70,52 @@
 
         <!-- RESULTADO -->
         <?php
-        // Captura datos tanto si vienen por GET como por POST
-        $metodo = $_SERVER["REQUEST_METHOD"];
-        if ($metodo == "GET" && isset($_GET['numero1'], $_GET['numero2'], $_GET['operador'])) {
-            $num1 = $_GET['numero1'];
-            $num2 = $_GET['numero2'];
-            $operador = $_GET['operador'];
-        } elseif ($metodo == "POST" && isset($_POST['numero1'], $_POST['numero2'], $_POST['operador'])) {
-            $num1 = $_POST['numero1'];
-            $num2 = $_POST['numero2'];
-            $operador = $_POST['operador'];
-        }
-
-        if (isset($num1, $num2, $operador)) {
-            switch ($operador) {
-                case "suma":
-                    $resultado = $num1 + $num2;
-                    $simbolo = "+";
-                    break;
-                case "resta":
-                    $resultado = $num1 - $num2;
-                    $simbolo = "-";
-                    break;
-                case "multiplicacion":
-                    $resultado = $num1 * $num2;
-                    $simbolo = "*";
-                    break;
-                case "division":
-                    $resultado = ($num2 != 0) ? $num1 / $num2 : "Error: división por cero";
-                    $simbolo = "/";
-                    break;
-                case "modulo":
-                    $resultado = ($num2 != 0) ? $num1 % $num2 : "Error: división por cero";
-                    $simbolo = "%";
-                    break;
-                default:
-                    $resultado = "Operador no válido";
-                    $simbolo = "?";
+            // Captura datos tanto si vienen por GET como por POST
+            $metodo = $_SERVER["REQUEST_METHOD"];
+            if ($metodo == "GET" && isset($_GET['numero1'], $_GET['numero2'], $_GET['operador'])) {
+                $num1 = $_GET['numero1'];
+                $num2 = $_GET['numero2'];
+                $operador = $_GET['operador'];
+            } elseif ($metodo == "POST" && isset($_POST['numero1'], $_POST['numero2'], $_POST['operador'])) {
+                $num1 = $_POST['numero1'];
+                $num2 = $_POST['numero2'];
+                $operador = $_POST['operador'];
             }
 
-            echo "<div class='alert alert-info mt-4 w-50 m-auto text-center'>
-                    <h5>Resultado mediante <strong>$metodo</strong>:</h5>
-                    <p class='fs-5'>
-                        <strong>$num1</strong> $simbolo <strong>$num2</strong> = <strong>$resultado</strong>
-                    </p>
-                  </div>";
-        }
+            if (isset($num1, $num2, $operador)) {
+                switch ($operador) {
+                    case "suma":
+                        $resultado = $num1 + $num2;
+                        $simbolo = "+";
+                        break;
+                    case "resta":
+                        $resultado = $num1 - $num2;
+                        $simbolo = "-";
+                        break;
+                    case "multiplicacion":
+                        $resultado = $num1 * $num2;
+                        $simbolo = "*";
+                        break;
+                    case "division":
+                        $resultado = ($num2 != 0) ? $num1 / $num2 : "Error: división por cero";
+                        $simbolo = "/";
+                        break;
+                    case "modulo":
+                        $resultado = ($num2 != 0) ? $num1 % $num2 : "Error: división por cero";
+                        $simbolo = "%";
+                        break;
+                    default:
+                        $resultado = "Operador no válido";
+                        $simbolo = "?";
+                }
+
+                echo "<div class='alert alert-info mt-4 w-50 m-auto text-center'>
+                        <h5>Resultado mediante <strong>$metodo</strong>:</h5>
+                        <p class='fs-5'>
+                            <strong>$num1</strong> $simbolo <strong>$num2</strong> = <strong>$resultado</strong>
+                        </p>
+                    </div>";
+            }
         ?>
     </div>
 </body>

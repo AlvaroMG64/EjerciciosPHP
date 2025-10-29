@@ -89,7 +89,26 @@
                     return mcdDivisionRecursivo($b, $a % $b);
                 }
             }
-            ?>
+
+                            // Función swap: intercambia dos valores por referencia
+            function swap(&$n1, &$n2) {
+                $temp = $n1;
+                $n1 = $n2;
+                $n2 = $temp;
+            }
+
+            // Función para invertir el array usando swap
+            function invertirArray($array) {
+                $inicio = 0;
+                $fin = count($array) - 1;
+                while ($inicio < $fin) {
+                    swap($array[$inicio], $array[$fin]);
+                    $inicio++;
+                    $fin--;
+                }
+                return $array;
+            }
+        ?>
 
     </div>
 </body>

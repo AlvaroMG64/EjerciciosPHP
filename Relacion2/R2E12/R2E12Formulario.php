@@ -21,7 +21,7 @@
     <div class="d-flex justify-content-center align-items-center vh-100 bg-white">
         <!-- enviamos por el método get, pero si hubiera algún campo de valor reservado (password, etc)
              o un campo file, habría que utilizar obligatoriamente, post -->
-        <form action="12calculo-notas.php" method="get" class="p-3 w-50 shadow rounded bg-secondary-subtle"
+        <form action="R2E12Calculo.php" method="get" class="p-3 w-50 shadow rounded bg-secondary-subtle"
             id="form1"> <!-- le ponemos id al formulario para poder citarlo desde js -->
             <h3 class="text-danger text-center">Cálculo de notas</h3>
             <div class="mb-3">
