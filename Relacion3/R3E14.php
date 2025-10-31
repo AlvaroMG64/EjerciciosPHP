@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Funciones Anónimas en PHP</title>
+    <title>Relación 3 - Ejercicio 14</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body class="bg-light p-5">
@@ -25,7 +25,7 @@
                         $r = floatval($_POST['radio']);
 
                         if ($r <= 0) {
-                            echo "<div class='alert alert-danger text-center'>❌ El radio debe ser un número positivo.</div>";
+                            echo "<div class='alert alert-danger text-center'>El radio debe ser un número positivo.</div>";
                         } else {
                             // Funciones anónimas
                             $circunferencia = function ($n) {
@@ -80,6 +80,5 @@
             </div>
         </div>
     </div>
-
 </body>
 </html>

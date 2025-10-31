@@ -7,39 +7,72 @@
 </head>
 <body class="bg-light">
     <div class="container py-5">
+        <h1 class="text-center mb-5 text-primary">Pruebas de funciones de <code>Relacion3.php</code></h1>
 
-        <h1>Pruebas de funciones de Relacion3.php</h1>
         <?php
-
-            // Incluimos la librería
             include 'Relacion3.php';
-
-            // Pruebas de las funciones
-
-            // --- Primos ---
+            // Datos base
             $numero = 17;
-            echo "¿$numero es primo? " . (esPrimo($numero) ? "Sí" : "No") . "<br>";
-
-            // --- Factorial ---
             $n = 5;
-            echo "Factorial iterativo de $n = " . factorialIterativo($n) . "<br>";
-            echo "Factorial recursivo de $n = " . factorialRecursivo($n) . "<br>";
-
-            // --- MCD (restas) ---
             $a = 48;
             $b = 18;
-            echo "MCD por restas de $a y $b = " . mcdRestas($a, $b) . "<br>";
-
-            // --- MCD (divisiones) ---
-            echo "MCD por divisiones de $a y $b = " . mcdDivision($a, $b) . "<br>";
-
-            // --- MCD (restas recursivo) ---
-            echo "MCD por restas recursivo de $a y $b = " . mcdRestasRecursivo($a, $b) . "<br>";
-
-            // --- MCD (divisiones recursivo) ---
-            echo "MCD por divisiones recursivo de $a y $b = " . mcdDivisionRecursivo($a, $b) . "<br>";
         ?>
 
+        <div class="row g-4">
+            <!-- Primos -->
+            <div class="col-md-6">
+                <div class="card shadow-sm border-0">
+                    <div class="card-header bg-primary text-white fw-bold">
+                        Números Primos
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">
+                            ¿<?= $numero ?> es primo? 
+                            <span class="fw-bold text-success"><?= esPrimo($numero) ? "Sí" : "No" ?></span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Factorial -->
+            <div class="col-md-6">
+                <div class="card shadow-sm border-0">
+                    <div class="card-header bg-success text-white fw-bold">
+                        Factorial
+                    </div>
+                    <div class="card-body">
+                        <p>Factorial iterativo de <strong><?= $n ?></strong> = <?= factorialIterativo($n) ?></p>
+                        <p>Factorial recursivo de <strong><?= $n ?></strong> = <?= factorialRecursivo($n) ?></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- MCD por restas -->
+            <div class="col-md-6">
+                <div class="card shadow-sm border-0">
+                    <div class="card-header bg-warning text-dark fw-bold">
+                        Máximo Común Divisor (Restas)
+                    </div>
+                    <div class="card-body">
+                        <p>MCD por restas de <strong><?= "$a y $b" ?></strong> = <?= mcdRestas($a, $b) ?></p>
+                        <p>MCD por restas (recursivo) = <?= mcdRestasRecursivo($a, $b) ?></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- MCD por divisiones -->
+            <div class="col-md-6">
+                <div class="card shadow-sm border-0">
+                    <div class="card-header bg-info text-white fw-bold">
+                        Máximo Común Divisor (Divisiones)
+                    </div>
+                    <div class="card-body">
+                        <p>MCD por divisiones de <strong><?= "$a y $b" ?></strong> = <?= mcdDivision($a, $b) ?></p>
+                        <p>MCD por divisiones (recursivo) = <?= mcdDivisionRecursivo($a, $b) ?></p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </body>
 </html>

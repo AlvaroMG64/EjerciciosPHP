@@ -26,7 +26,7 @@
                 $esPalindroma = (strtolower(str_replace(' ', '', $cadena)) == strtolower(str_replace(' ', '', $reves)));
 
                 echo "<div class='alert alert-info'><strong>Del revés:</strong> $reves<br>";
-                echo $esPalindroma ? "✅ Es palíndroma" : "❌ No es palíndroma";
+                echo $esPalindroma ? "Es palíndroma" : "No es palíndroma";
                 echo "</div>";
 
                 // Palabras del revés (no los caracteres)
@@ -53,6 +53,5 @@
             }
         ?>
     </div>
-
 </body>
 </html>

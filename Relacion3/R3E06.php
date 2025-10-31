@@ -65,7 +65,7 @@
                 ?>
             </div>
             <div class="card-footer text-center">
-                <a href="index.php" class="btn btn-outline-secondary">Volver al Menú</a>
+                <a href="R3E06.php" class="btn btn-outline-secondary">Volver al Menú</a>
             </div>
         </div>
     </div>
