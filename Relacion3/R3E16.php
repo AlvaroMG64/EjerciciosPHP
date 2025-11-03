@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Ejercicio 16 Mejorado y Funcional</title>
+    <title>Relación 3 - Ejercicio</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body class="bg-light">
@@ -61,11 +61,11 @@
                     <tbody>
                     <tr>
                         <td>Todos positivos (array_all)</td>
-                        <td><?= $todosPositivos ? "Sí ✅" : "No ❌" ?></td>
+                        <td><?= $todosPositivos ? "Sí" : "No" ?></td>
                     </tr>
                     <tr>
                         <td>Alguno múltiplo de 5 (array_any)</td>
-                        <td><?= $algunoMultiplo5 ? "Sí ✅" : "No ❌" ?></td>
+                        <td><?= $algunoMultiplo5 ? "Sí" : "No" ?></td>
                     </tr>
                     <tr>
                         <td>Números primos (array_filter)</td>

@@ -40,7 +40,7 @@
             <i class="bi bi-code-square text-primary display-5 mb-3"></i>
             <h5 class="card-title text-primary">Relación 1</h5>
             <p class="card-text">Ejercicios introductorios de PHP: variables, arrays, clases y estructuras básicas.</p>
-            <a href="./relacion1/index.html" class="btn btn-primary w-100">Ir a Relación 1</a>
+            <a href="./Relacion1/index.html" class="btn btn-primary w-100">Ir a Relación 1</a>
           </div>
         </div>
       </div>
@@ -52,7 +52,7 @@
             <i class="bi bi-layout-text-sidebar-reverse text-success display-5 mb-3"></i>
             <h5 class="card-title text-success">Relación 2</h5>
             <p class="card-text">Formularios, condicionales, estructuras repetitivas y funciones personalizadas.</p>
-            <a href="./relacion2/index.html" class="btn btn-success w-100">Ir a Relación 2</a>
+            <a href="./Relacion2/index.html" class="btn btn-success w-100">Ir a Relación 2</a>
           </div>
         </div>
       </div>
@@ -64,7 +64,7 @@
             <i class="bi bi-database-check text-danger display-5 mb-3"></i>
             <h5 class="card-title text-danger">Relación 3</h5>
             <p class="card-text">PHP con sesiones, cookies, manejo de formularios y persistencia de datos.</p>
-            <a href="./relacion3/index.html" class="btn btn-danger w-100">Ir a Relación 3</a>
+            <a href="./Relacion3/index.html" class="btn btn-danger w-100">Ir a Relación 3</a>
           </div>
         </div>
       </div>
@@ -73,10 +73,10 @@
       <div class="col-md-6 col-lg-3">
         <div class="card shadow-sm h-100 border-0">
           <div class="card-body text-center">
-            <i class="bi bi-table text-warning display-5 mb-3"></i>
-            <h5 class="card-title text-warning">Relación 4</h5>
+            <i class="bi bi-table text-secondary display-5 mb-3"></i>
+            <h5 class="card-title text-secondary">Relación 4</h5>
             <p class="card-text">Tablas de datos, conexión a bases de datos y visualización dinámica con PHP.</p>
-            <a href="./relacion4/index.html" class="btn btn-warning w-100 text-white">Ir a Relación 4</a>
+            <a href="./Relacion4/index.html" class="btn btn-secondary w-100 text-white">Ir a Relación 4</a>
           </div>
         </div>
       </div>
@@ -87,8 +87,7 @@
   <!-- Footer -->
   <footer class="bg-dark text-white text-center py-3 mt-auto">
     <p class="mb-0">
-      <i class="bi bi-bootstrap-fill me-1"></i> 
-      Desarrollado con Bootstrap 5 - 2025
+      Footer
     </p>
   </footer>
 

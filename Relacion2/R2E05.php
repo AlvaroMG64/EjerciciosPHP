@@ -40,13 +40,6 @@
     </tbody>
   </table>
 
-  <a href="index.html" class="btn btn-secondary mt-4">Volver al índice</a>
-
-  <!-- Componentes de prueba -->
-  <div class="mt-4">
-    <button class="btn btn-primary me-2">Ver Gráfico</button>
-    <div class="spinner-border text-success" role="status"></div>
-  </div>
 </div>
 
 </body>

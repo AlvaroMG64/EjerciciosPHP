@@ -14,24 +14,27 @@
         }
     </script>
     <div class="container">
-        <h1>Factorial de un número</h1>
-        <form method="post" onsubmit="return validarFactorial()">
-            <label>Número: <input type="number" id="numero" name="numero" required></label>
-            <button class="btn btn-primary" type="submit">Calcular</button>
-        </form>
-
-        <?php
-            if($_SERVER['REQUEST_METHOD']==='POST'){
-                $n=(int)$_POST['numero'];
-                if($n<0) echo "<p class='text-danger'>Número debe ser positivo</p>";
-                else{
-                    $fact=1;
-                    echo "<p>Factorial de $n: ";
-                    for($i=$n;$i>=1;$i--){ $fact*=$i; echo $i.($i>1?" * ":" = "); }
-                    echo $fact."</p>";
-                }
-            }
-        ?>
+        <div class="card mb-5 shadow-sm border-primary">
+            <div class="card-body">
+                <h2 class="text-center text-primary mb-4">Factorial de un número</h2>
+                <form method="post" onsubmit="return validarFactorial()">
+                    <input type="number" id="numero" name="numero" class="form-control mb-3" placeholder="Introduce un número" required>
+                    <button class="btn btn-primary text-white w-100" type="submit">Calcular</button>
+                </form>
+                <?php
+                    if($_SERVER['REQUEST_METHOD']==='POST' && isset($_POST['numero'])){
+                        $n=(int)$_POST['numero'];
+                        if($n<0) echo "<p class='text-danger mt-3'>Número debe ser positivo</p>";
+                        else{
+                            $fact=1;
+                            echo "<p class='mt-3 fs-5'>Factorial de $n: ";
+                            for($i=$n;$i>=1;$i--){ $fact*=$i; echo $i.($i>1?" × ":" = "); }
+                            echo "<strong>$fact</strong></p>";
+                        }
+                    }
+                ?>
+            </div>
+        </div>
     </div>
 </body>
 </html>

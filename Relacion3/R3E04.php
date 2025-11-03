@@ -63,7 +63,7 @@
             <!-- MCD por divisiones -->
             <div class="col-md-6">
                 <div class="card shadow-sm border-0">
-                    <div class="card-header bg-info text-white fw-bold">
+                    <div class="card-header bg-danger text-white fw-bold">
                         Máximo Común Divisor (Divisiones)
                     </div>
                     <div class="card-body">

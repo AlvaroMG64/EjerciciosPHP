@@ -35,64 +35,64 @@
     <h1 class="text-center mb-4 text-primary">Relación 1 de Ejercicios PHP</h1>
 
     <div class="list-group shadow-sm">
-      <a href="./R1E01.php" class="list-group-item list-group-item-action">
+      <a href="./Relacion1/R1E01.php" class="list-group-item list-group-item-action">
         <strong>Ejercicio 1:</strong> Mostrar "Hello world" de varias formas
       </a>
-      <a href="./R1E02.php" class="list-group-item list-group-item-action">
+      <a href="./Relacion1/R1E02.php" class="list-group-item list-group-item-action">
         <strong>Ejercicio 2:</strong> Tipos de datos escalares con var_dump y printf
       </a>
-      <a href="./R1E03.php" class="list-group-item list-group-item-action">
+      <a href="./Relacion1/R1E03.php" class="list-group-item list-group-item-action">
         <strong>Ejercicio 3:</strong> Superglobal $_SERVER y volcado de datos
       </a>
-      <a href="./R1E04.php" class="list-group-item list-group-item-action">
+      <a href="./Relacion1/R1E04.php" class="list-group-item list-group-item-action">
         <strong>Ejercicio 4:</strong> Array de días de la semana
       </a>
-      <a href="./R1E05.php" class="list-group-item list-group-item-action">
+      <a href="./Relacion1/R1E05.php" class="list-group-item list-group-item-action">
         <strong>Ejercicio 5:</strong> Array asociativo con temperaturas
       </a>
-      <a href="./R1E06.php" class="list-group-item list-group-item-action">
+      <a href="./Relacion1/R1E06.php" class="list-group-item list-group-item-action">
         <strong>Ejercicio 6:</strong> Clase Fruta con atributos y métodos
       </a>
-      <a href="./R1E07.php" class="list-group-item list-group-item-action">
+      <a href="./Relacion1/R1E07.php" class="list-group-item list-group-item-action">
         <strong>Ejercicio 7:</strong> Nota final con descuento por faltas
       </a>
-      <a href="./R1E08.php" class="list-group-item list-group-item-action">
+      <a href="./Relacion1/R1E08.php" class="list-group-item list-group-item-action">
         <strong>Ejercicio 8:</strong> Nota final ponderada con arrays asociativos
       </a>
-      <a href="./R1E09.php" class="list-group-item list-group-item-action">
+      <a href="./Relacion1/R1E09.php" class="list-group-item list-group-item-action">
         <strong>Ejercicio 9:</strong> Clasificación de triángulos
       </a>
-      <a href="./R1E10.php" class="list-group-item list-group-item-action">
+      <a href="./Relacion1/R1E10.php" class="list-group-item list-group-item-action">
         <strong>Ejercicio 10:</strong> Resolución de ecuación de segundo grado
       </a>
-      <a href="./R1E11.php" class="list-group-item list-group-item-action">
+      <a href="./Relacion1/R1E11.php" class="list-group-item list-group-item-action">
         <strong>Ejercicio 11:</strong> Ecuaciones con coeficientes cero
       </a>
-      <a href="./R1E12.php" class="list-group-item list-group-item-action">
+      <a href="./Relacion1/R1E12.php" class="list-group-item list-group-item-action">
         <strong>Ejercicio 12:</strong> Nota numérica a calificación cualitativa
       </a>
-      <a href="./R1E13.php" class="list-group-item list-group-item-action">
+      <a href="./Relacion1/R1E13.php" class="list-group-item list-group-item-action">
         <strong>Ejercicio 13:</strong> Factorial de un número natural
       </a>
-      <a href="./R1E14.php" class="list-group-item list-group-item-action">
+      <a href="./Relacion1/R1E14.php" class="list-group-item list-group-item-action">
         <strong>Ejercicio 14:</strong> Suma de los primeros números naturales
       </a>
-      <a href="./R1E15.php" class="list-group-item list-group-item-action">
+      <a href="./Relacion1/R1E15.php" class="list-group-item list-group-item-action">
         <strong>Ejercicio 15:</strong> Comprobar si un número es primo
       </a>
-      <a href="./R1E16.php" class="list-group-item list-group-item-action">
+      <a href="./Relacion1/R1E16.php" class="list-group-item list-group-item-action">
         <strong>Ejercicio 16:</strong> Mostrar todos los divisores de un número
       </a>
-      <a href="./R1E17.php" class="list-group-item list-group-item-action">
+      <a href="./Relacion1/R1E17.php" class="list-group-item list-group-item-action">
         <strong>Ejercicio 17:</strong> División con algoritmo de Euclides
       </a>
-      <a href="./R1E18.php" class="list-group-item list-group-item-action">
+      <a href="./Relacion1/R1E18.php" class="list-group-item list-group-item-action">
         <strong>Ejercicio 18:</strong> Máximo común divisor con Euclides
       </a>
-      <a href="./R1E19.php" class="list-group-item list-group-item-action">
+      <a href="./Relacion1/R1E19.php" class="list-group-item list-group-item-action">
         <strong>Ejercicio 19:</strong> Convertir decimal a binario
       </a>
-      <a href="./R1E20.php" class="list-group-item list-group-item-action">
+      <a href="./Relacion1/R1E20.php" class="list-group-item list-group-item-action">
         <strong>Ejercicio 20:</strong> Convertir decimal a base 2, 8 o 16
       </a>
     </div>
@@ -107,8 +107,10 @@
   </main>
 
   <!-- Footer -->
-  <footer class="bg-primary text-white text-center py-3 mt-auto">
-    <p class="mb-0">&copy; 2025 - Ejercicios PHP con Bootstrap 5</p>
+  <footer class="bg-dark text-white text-center py-3 mt-auto">
+    <p class="mb-0">
+      Footer
+    </p>
   </footer>
 
   <!-- Bootstrap JS -->

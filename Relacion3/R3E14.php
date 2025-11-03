@@ -6,10 +6,8 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body class="bg-light p-5">
-
     <div class="container">
         <h1 class="mb-4 text-center">Cálculos con funciones anónimas</h1>
-
         <div class="card shadow-sm">
             <div class="card-body">
                 <form method="post" class="mb-4">

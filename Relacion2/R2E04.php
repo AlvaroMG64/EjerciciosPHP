@@ -23,8 +23,6 @@
       </li>
     <?php endforeach; ?>
   </ol>
-
-  <a href="index.html" class="btn btn-secondary mt-4">Volver al índice</a>
 </div>
 
 </body>

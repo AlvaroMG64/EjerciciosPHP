@@ -7,31 +7,40 @@
 </head>
 <body class="p-4">
     <div class="container">
-        <h1>Cálculo de un número primo y divisores</h1>
-        <form method="post">
-            <label>Número: <input type="number" name="num" required></label><br>
-            <label><input type="radio" name="accion" value="primo" required> Verificar si es primo</label>
-            <label><input type="radio" name="accion" value="divisores"> Mostrar divisores</label><br>
-            <button class="btn btn-primary" type="submit">Calcular</button>
-        </form>
+        <div class="card mb-5 shadow-sm border-success">
+            <div class="card-body">
+                <h2 class="text-center text-success mb-4">Primo o Divisores</h2>
+                <form method="post">
+                    <input type="number" name="num" class="form-control mb-2" placeholder="Introduce un número" required>
+                    <div class="form-check">
+                        <input type="radio" class="form-check-input" name="accion" value="primo" required>
+                        <label class="form-check-label">Verificar si es primo</label>
+                    </div>
+                    <div class="form-check mb-3">
+                        <input type="radio" class="form-check-input" name="accion" value="divisores">
+                        <label class="form-check-label">Mostrar divisores</label>
+                    </div>
+                    <button class="btn btn-success w-100" type="submit">Calcular</button>
+                </form>
+                <?php
+                    if($_SERVER['REQUEST_METHOD']==='POST' && isset($_POST['accion'])){
+                        $num=(int)$_POST['num'];
+                        $accion=$_POST['accion'];
 
-        <?php
-            if($_SERVER['REQUEST_METHOD']==='POST'){
-                $num=(int)$_POST['num'];
-                $accion=$_POST['accion'];
-
-                if($accion==='primo'){
-                    $esPrimo=true;
-                    if($num<2) $esPrimo=false;
-                    for($i=2;$i<=sqrt($num);$i++) if($num%$i==0){ $esPrimo=false; break; }
-                    echo "<p>$num ".($esPrimo?"es primo":"no es primo")."</p>";
-                } else {
-                    echo "<p>Divisores de $num: ";
-                    for($i=1;$i<=$num;$i++) echo $num%$i==0 ? "<span style='color:green'>$i</span> ":"$i ";
-                    echo "</p>";
-                }
-            }
-        ?>
+                        if($accion==='primo'){
+                            $esPrimo=true;
+                            if($num<2) $esPrimo=false;
+                            for($i=2;$i<=sqrt($num);$i++) if($num%$i==0){ $esPrimo=false; break; }
+                            echo "<p class='mt-3 fs-5'>$num ".($esPrimo?"es primo":"no es primo")."</p>";
+                        } else {
+                            echo "<p class='mt-3 fs-5'>Divisores de $num:<br>";
+                            for($i=1;$i<=$num;$i++) echo $num%$i==0 ? "<span class='text-success'>$i </span>" : "$i ";
+                            echo "</p>";
+                        }
+                    }
+                ?>
+            </div>
+        </div>
     </div>
 </body>
 </html>

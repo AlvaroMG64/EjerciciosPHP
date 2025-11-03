@@ -7,29 +7,42 @@
 </head>
 <body class="p-4">
     <div class="container">
-        <h1>Cociente y resto de una división</h1>
-        <form method="post">
-            <label>Dividendo: <input type="number" name="a" required></label>
-            <label>Divisor: <input type="number" name="b" required></label><br>
-            <label><input type="checkbox" name="opciones[]" value="cociente"> Cociente</label>
-            <label><input type="checkbox" name="opciones[]" value="resto"> Resto</label><br>
-            <button class="btn btn-primary" type="submit">Calcular</button>
-        </form>
-
-        <?php
-            if($_SERVER['REQUEST_METHOD']==='POST'){
-                $a=(int)$_POST['a']; $b=(int)$_POST['b'];
-                if($b==0){ echo "<p class='text-danger'>División por 0</p>"; exit; }
-                $c=$a; $quot=0; while($c>=$b){ $c-=$b; $quot++; }
-                $resto=$c;
-                if(!empty($_POST['opciones'])){
-                    foreach($_POST['opciones'] as $op){
-                        echo $op=='cociente' ? "<p>Cociente: $quot</p>" : "";
-                        echo $op=='resto' ? "<p>Resto: $resto</p>" : "";
+        <div class="card mb-5 shadow-sm border-success">
+            <div class="card-body">
+                <h2 class="text-center text-success mb-4">Cociente y Resto</h2>
+                <form method="post">
+                    <div class="row g-2 mb-3">
+                        <div class="col"><input type="number" name="a" class="form-control" placeholder="Dividendo" required></div>
+                        <div class="col"><input type="number" name="b" class="form-control" placeholder="Divisor" required></div>
+                    </div>
+                    <div class="form-check">
+                        <input type="checkbox" name="opciones[]" value="cociente" class="form-check-input" id="chk1">
+                        <label for="chk1" class="form-check-label">Cociente</label>
+                    </div>
+                    <div class="form-check mb-3">
+                        <input type="checkbox" name="opciones[]" value="resto" class="form-check-input" id="chk2">
+                        <label for="chk2" class="form-check-label">Resto</label>
+                    </div>
+                    <button class="btn btn-success w-100" type="submit">Calcular</button>
+                </form>
+                <?php
+                    if($_SERVER['REQUEST_METHOD']==='POST' && isset($_POST['a'])){
+                        $a=(int)$_POST['a']; $b=(int)$_POST['b'];
+                        if($b==0){ echo "<p class='text-danger mt-3'>División por 0</p>"; }
+                        else {
+                            $c=$a; $quot=0; while($c>=$b){ $c-=$b; $quot++; }
+                            $resto=$c;
+                            if(!empty($_POST['opciones'])){
+                                foreach($_POST['opciones'] as $op){
+                                    if($op=='cociente') echo "<p class='mt-3 fs-5'>Cociente: $quot</p>";
+                                    if($op=='resto') echo "<p class='fs-5'>Resto: $resto</p>";
+                                }
+                            }
+                        }
                     }
-                }
-            }
-        ?>
+                ?>
+            </div>
+        </div>
     </div>
 </body>
 </html>
