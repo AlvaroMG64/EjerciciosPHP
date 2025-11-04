@@ -6,7 +6,7 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body class="p-4">
-    <div class="container">
+    <div class="container w-50">
         <div class="card shadow-lg border-dark">
             <div class="card-body">
                 <h2 class="text-center text-dark mb-4">Conversión de Bases</h2>

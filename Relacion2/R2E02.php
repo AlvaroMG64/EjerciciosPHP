@@ -14,22 +14,6 @@
 </head>
 <body class="bg-light d-flex flex-column min-vh-100">
 
-  <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm">
-    <div class="container">
-      <a class="navbar-brand fw-bold" href="#">Relación 1 - PHP</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link active" href="#">Inicio</a></li>
-          <li class="nav-item"><a class="nav-link" href="../super-index.html">Super-Index</a></li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-
   <!-- Contenido principal -->
   <main class="container my-5 flex-grow-1">
     <h1 class="text-center mb-4 text-primary">Relación 1 de Ejercicios PHP</h1>

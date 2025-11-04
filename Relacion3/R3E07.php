@@ -72,13 +72,13 @@
 
                         // Timestamp actual en milisegundos
                         $microtime_float = microtime(true);
-                        $milisegundos = round($microtime_float * 1000);
+                        $milisegundos = floor($microtime_float * 1000);
 
                         // Conversiones
-                        $minutos = round($timestamp_actual / 60);
-                        $horas = round($timestamp_actual / 3600);
-                        $dias = round($timestamp_actual / 86400);
-                        $anios = round($timestamp_actual / (86400 * 365));
+                        $minutos = floor($timestamp_actual / 60);
+                        $horas = floor($timestamp_actual / 3600);
+                        $dias = floor($timestamp_actual / 86400);
+                        $anos = floor($timestamp_actual / (86400 * 365));
 
                         // Ejemplo de conversión de fecha a timestamp
                         $fechaEjemplo = "2025-10-31 18:30:00";
@@ -109,7 +109,7 @@
                                 <?= number_format($minutos, 0, ',', '.') ?> minutos<br>
                                 <?= number_format($horas, 0, ',', '.') ?> horas<br>
                                 <?= number_format($dias, 0, ',', '.') ?> días<br>
-                                <?= number_format($anios, 0, ',', '.') ?> años aproximadamente
+                                <?= number_format($anos, 0, ',', '.') ?> años
                             </li>
                             <li class="list-group-item">
                                 <strong>Ejemplo:</strong> La fecha <code><?= $fechaEjemplo ?></code> equivale al timestamp <code><?= $timestamp_fecha ?></code>

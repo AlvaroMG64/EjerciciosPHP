@@ -6,7 +6,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body class="bg-light">
-    <div class="container py-5">
+    <div class="container py-5 w-50">
         <div class="card shadow border-0">
             <div class="card-header bg-success text-white text-center">
                 <h2>Menús con Probabilidad Ponderada e Imagen</h2>
@@ -28,9 +28,9 @@
                 // IMÁGENES ASOCIADAS A LOS PRIMEROS
                 // ------------------------------------
                 $imagenes = [
-                    'Gazpachuelo' => 'img/gazpachuelo.jpg',
-                    'Salmorejo' => 'img/salmorejo.jpg',
-                    'Ajo Blanco' => 'img/ajoblanco.jpg'
+                    'Gazpachuelo' => './Imagenes/Gazpachuelo.jpg',
+                    'Salmorejo' => './Imagenes/Salmorejo.jpg',
+                    'Ajo Blanco' => './Imagenes/Ajoblanco.jpg'
                 ];
 
                 // ------------------------------------

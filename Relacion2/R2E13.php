@@ -15,7 +15,7 @@
             return true;
         }
     </script>
-    <div class="container">
+    <div class="container w-50">
         <div class="card mb-5 shadow-sm border-primary">
             <div class="card-body">
                 <h2 class="text-center text-primary mb-4">Tipo de triángulo</h2>

@@ -9,11 +9,14 @@
     <script>
         function validarNota() {
             const nota = parseInt(document.getElementById('nota').value);
-            if(isNaN(nota) || nota<1 || nota>10){ alert("Introduce un número entre 1 y 10"); return false; }
+            if (isNaN(nota) || nota < 1 || nota > 10) {
+                alert("Introduce un número entre 1 y 10");
+                return false;
+            }
             return true;
         }
     </script>
-    <div class="container">
+    <div class="container w-50">
         <div class="card mb-5 shadow-sm border-success">
             <div class="card-body">
                 <h2 class="text-center text-success mb-4">Nota con Progress Bar</h2>
@@ -25,20 +28,34 @@
                     <button class="btn btn-success w-100" type="submit">Evaluar</button>
                 </form>
                 <?php
-                    if($_SERVER['REQUEST_METHOD']==='POST' && isset($_POST['nota'])){
-                        $nota=(int)$_POST['nota'];
-                        if($nota<1 || $nota>10){
+                    if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['nota'])) {
+                        $nota = (int)$_POST['nota'];
+                        if ($nota < 1 || $nota > 10) {
                             echo "<p class='text-danger mt-3'>Nota inválida</p>";
                         } else {
-                            $mensaje = match(true){
-                                $nota>=9 => "Sobresaliente",
-                                $nota>=7 => "Notable",
-                                $nota==6 => "Bien",
-                                $nota==5 => "Suficiente",
+                            // Mensaje según nota
+                            $mensaje = match (true) {
+                                $nota >= 9 => "Sobresaliente",
+                                $nota >= 7 => "Notable",
+                                $nota == 6 => "Bien",
+                                $nota == 5 => "Suficiente",
                                 default => "Suspenso"
                             };
+
+                            // Color según nota
+                            $color = match (true) {
+                                $nota <= 4 => "bg-danger",     // Rojo
+                                $nota == 5 => "bg-warning",    // Amarillo
+                                $nota <= 7 => "bg-primary",    // Azul
+                                default => "bg-success"        // Verde
+                            };
+
                             echo "<p class='mt-3 fs-5'>Calificación: <strong>$mensaje</strong></p>";
-                            echo "<div class='progress mt-2'><div class='progress-bar bg-success' role='progressbar' style='width:".($nota*10)."%'>{$nota}/10</div></div>";
+                            echo "<div class='progress mt-2'>
+                                    <div class='progress-bar $color' role='progressbar' style='width:" . ($nota * 10) . "%'>
+                                        {$nota}/10
+                                    </div>
+                                  </div>";
                         }
                     }
                 ?>
