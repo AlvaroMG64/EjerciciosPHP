@@ -35,7 +35,7 @@ El objetivo es consolidar el aprendizaje progresivo de PHP, aplicando buenas pr�
 
 ---
 
-## 🧑‍💻 Autor
+## Autor
 
 **Nombre del Autor:** *[Tu nombre completo aquí]*  
 **Curso:** *Desarrollo Web en Entorno Servidor (DWES)*  
@@ -44,7 +44,7 @@ El objetivo es consolidar el aprendizaje progresivo de PHP, aplicando buenas pr�
 
 ---
 
-## 📚 Fuentes de Consulta
+## Fuentes de Consulta
 
 - [Documentación oficial de PHP](https://www.php.net/manual/es/)  
 - [Guía de funciones de arrays](https://www.php.net/manual/es/book.array.php)  
@@ -54,5 +54,5 @@ El objetivo es consolidar el aprendizaje progresivo de PHP, aplicando buenas pr�
 
 ---
 
-## 📜 Licencia
+## Licencia
 Este proyecto puede ser reutilizado y adaptado libremente con fines **educativos o demostrativos**, citando la autoría original.

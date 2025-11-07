@@ -7,13 +7,33 @@
 </head>
 <body class="bg-light">
     <div class="container py-5 w-50">
-        <div class="card shadow border-0">
+
+        <!-- TÍTULO -->
+        <div class="card shadow border-0 mb-4">
             <div class="card-header bg-success text-white text-center">
                 <h2>Menús con Probabilidad Ponderada e Imagen</h2>
             </div>
+            <!-- FORMULARIO -->
             <div class="card-body">
+                <form action="<?php echo $_SERVER['PHP_SELF']?>" method="post" 
+                    class=" m-5 bg-white border rounded-3 shadow-sm m-auto p-4 w-50" id="form1">
 
-                <?php
+                    <div class="mb-3">
+                        <label for="numero" class="form-label">Introduzca el número de menús a generar:</label>
+                        <input type="number" id="numero" name="numero" min="1" max="81" step="1"
+                            placeholder="Introduzca un número entero entre 1 y 81" class="form-control" required>
+                    </div>
+
+                    <div class="d-grid">
+                        <input type="submit" value="Generar menús" class="btn btn-success">
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div class="card-body">
+
+            <?php
                 // ------------------------------------
                 // MENÚ BASE
                 // ------------------------------------
@@ -43,31 +63,33 @@
                 }
 
                 // ------------------------------------
-                // GENERAR Y MOSTRAR MENÚ
+                // GENERAR Y MOSTRAR MENÚS
                 // ------------------------------------
-                $n = 3;
+                if (isset($_POST['numero'])) {
+                    $numeroMenus = intval($_POST['numero']);
 
-                for ($i = 1; $i <= $n; $i++) {
-                    $sugerencia = [];
-                    foreach ($menu as $tipo => $platos) {
-                        $sugerencia[$tipo] = elegirPlato($platos);
+                    echo "<h4 class='text-center my-4 text-success'>Menús generados</h4>";
+
+                    for ($i = 1; $i <= $numeroMenus; $i++) {
+                        $sugerencia = [];
+                        foreach ($menu as $tipo => $platos) {
+                            $sugerencia[$tipo] = elegirPlato($platos);
+                        }
+
+                        $primerPlato = $sugerencia['primero'];
+                        $imagen = $imagenes[$primerPlato] ?? 'img/noimage.jpg';
+
+                        echo "<div class='card my-4 border-0 shadow-sm'>";
+                        echo "<div class='card-header bg-secondary text-white text-center'><h5>Menú Especial $i</h5></div>";
+                        echo "<div class='card-body text-center'>";
+                        echo "<img src='$imagen' alt='$primerPlato' class='img-fluid rounded mb-3' style='max-width:300px'>";
+                        foreach ($sugerencia as $tipo => $plato) {
+                            echo "<p><strong>" . ucfirst($tipo) . ":</strong> $plato</p>";
+                        }
+                        echo "</div></div>";
                     }
-
-                    $primerPlato = $sugerencia['primero'];
-                    $imagen = $imagenes[$primerPlato] ?? 'img/noimage.jpg';
-
-                    echo "<div class='card my-4 border-0 shadow-sm'>";
-                    echo "<div class='card-header bg-secondary text-white text-center'><h5>Menú Especial $i</h5></div>";
-                    echo "<div class='card-body text-center'>";
-                    echo "<img src='$imagen' alt='$primerPlato' class='img-fluid rounded mb-3' style='max-width:300px'>";
-                    foreach ($sugerencia as $tipo => $plato) {
-                        echo "<p><strong>" . ucfirst($tipo) . ":</strong> $plato</p>";
-                    }
-                    echo "</div></div>";
                 }
-                ?>
-
-            </div>
+            ?>
         </div>
     </div>
 </body>
