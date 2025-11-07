@@ -8,7 +8,7 @@ El objetivo es consolidar el aprendizaje progresivo de PHP, aplicando buenas pr�
 
 ---
 
-## 📂 Estructura del Proyecto
+## Estructura del Proyecto
 
 /EjerciciosPHP/
 │
