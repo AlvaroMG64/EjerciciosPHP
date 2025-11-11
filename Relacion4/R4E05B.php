@@ -1,16 +1,3 @@
-<?php
-    class restaurante {
-        public $nombre = ' ';
-        public $tipoCocina = ' ';
-        public $ratings = [];
-
-        public function __construct($nombre, $tipoCocina, $ratings) {
-            $this->nombre = $nombre;
-            $this->tipoCocina = $tipoCocina;
-            $this->ratings = $ratings;
-        }
-    }
-?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
