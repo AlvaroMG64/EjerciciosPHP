@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Relación 1 - Ejercicio 10</title>
+    <link rel="shortcut icon" href="playamar.png" type="image/x-icon">
 </head>
 <body>
     <h1>Resolución de una ecuación de segundo grado</h1>

@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Relación 1 - Ejercicio 17</title>
+    <link rel="shortcut icon" href="playamar.png" type="image/x-icon">
 </head>
 <body>
     <h1>División de dos números usando el algoritmo de Euclides</h1>

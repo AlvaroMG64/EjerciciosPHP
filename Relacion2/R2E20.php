@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <title>Relación 2 - Ejercicio 20</title>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="shortcut icon" href="playamar.png" type="image/x-icon">
 </head>
 <body class="p-4">
     <div class="container w-50">
