@@ -1,58 +1,26 @@
-# Proyecto de Relaciones PHP
+# 📘 Ejercicios de PHP – Relaciones 1 a 4
 
-## Descripción General
-Este proyecto agrupa las **cuatro relaciones de ejercicios de PHP** realizadas durante el curso de *Desarrollo Web en Entorno Servidor (DWES)*.  
-Cada relación incluye ejemplos prácticos, formularios, funciones y manejo de datos que van desde los fundamentos del lenguaje hasta técnicas avanzadas de validación y seguridad.
-
-El objetivo es consolidar el aprendizaje progresivo de PHP, aplicando buenas prácticas de desarrollo y una interfaz visual basada en **Bootstrap 5**.
+Este repositorio reúne las cuatro relaciones de ejercicios de PHP desarrolladas durante las prácticas del módulo DWES.  
+Incluyen actividades progresivas que abarcan desde los fundamentos del lenguaje hasta técnicas avanzadas como sesiones, cookies y POO.
 
 ---
 
-## Estructura del Proyecto
+## 📂 Contenido del repositorio
 
-/EjerciciosPHP/
-│
-├── Relacion1/
-│ ├── index.php
-│ └── ...
-│
-├── Relacion2/
-│ ├── index.php
-│ └── ...
-│
-├── Relacion3/
-│ ├── index.php
-│ └── ...
-│
-├── Relacion4/
-│ ├── index.php
-│ └── ...
-│
-└── index.php ← Superíndice principal (portal de acceso)
+### 🔹 **Relación 1 – Ejercicios iniciales**  
+Conceptos básicos de PHP: sintaxis, variables, operadores y primeros scripts.
 
+### 🔹 **Relación 2 – Formularios, estilo y validación**  
+Prácticas centradas en formularios HTML, tratamiento de datos, validación y uso de Bootstrap.
 
-4. Se mostrará el **superíndice (`index.php`)**, desde donde podrás acceder a cada relación.
+### 🔹 **Relación 3 – Funciones, recursividad y arrays avanzados**  
+Ejercicios orientados al uso de funciones, recursividad, manipulación de arrays y lógica más compleja.
+
+### 🔹 **Relación 4 – Sesiones, cookies, POO y JSON**  
+Uso de sesiones y cookies, introducción a la Programación Orientada a Objetos y manejo de datos en JSON.
 
 ---
 
-## Autor
+## ✒️ Autoría
 
-**Nombre del Autor:** *[Tu nombre completo aquí]*  
-**Curso:** *Desarrollo Web en Entorno Servidor (DWES)*  
-**Centro:** *[Tu instituto o centro educativo]*  
-**Año académico:** 2024–2025  
-
----
-
-## Fuentes de Consulta
-
-- [Documentación oficial de PHP](https://www.php.net/manual/es/)  
-- [Guía de funciones de arrays](https://www.php.net/manual/es/book.array.php)  
-- [Validación de datos en PHP – W3Schools](https://www.w3schools.com/php/php_filter.asp)  
-- [Expresiones regulares en PHP – CyberITHub](https://www.cyberithub.com/how-to-use-preg_match-in-php/)  
-- [Bootstrap 5.3 – Documentación oficial](https://getbootstrap.com/docs/5.3/)  
-
----
-
-## Licencia
-Este proyecto puede ser reutilizado y adaptado libremente con fines **educativos o demostrativos**, citando la autoría original.
+**Álvaro Mozo Gaspar**
