@@ -1,12 +1,12 @@
 <?php
     session_start();
 
-    // Procesamiento de formulario (antes de cualquier output HTML)
-    if (isset($_REQUEST['enviar'])) {
-        // Inicializar si no existen (asegura que siempre sean enteros)
-        if (!isset($_SESSION['a'])) $_SESSION['a'] = 0;
-        if (!isset($_SESSION['b'])) $_SESSION['b'] = 0;
+    // Inicializamos A y B a 0 solo si no existen aún en la sesión
+    if (!isset($_SESSION['a'])) $_SESSION['a'] = 0;
+    if (!isset($_SESSION['b'])) $_SESSION['b'] = 0;
 
+    // Procesamiento del formulario
+    if (isset($_REQUEST['enviar'])) {
         switch ($_REQUEST['operacion']) {
             case "+a":
                 $_SESSION['a']++;
@@ -28,21 +28,17 @@
                 break;
             case "ds":
                 // Vaciar y destruir la sesión correctamente
-                session_unset();      // limpia $_SESSION
-                session_destroy();    // destruye la sesión en el servidor
-                // Redirigir para evitar seguir accediendo a $_SESSION destruida
+                session_unset();
+                session_destroy();
+                // Redirigir para empezar con sesión nueva
                 header("Location: " . strtok($_SERVER["REQUEST_URI"], '?'));
                 exit;
-            default:
-                // operación desconocida: no hacer nada o manejar error
-                break;
         }
     }
 
-    // A partir de aquí ya se puede renderizar HTML con seguridad
-    // Aseguramos valores por defecto para evitar notices
-    $a = $_SESSION['a'] ?? 0;
-    $b = $_SESSION['b'] ?? 0;
+    // Tomamos los valores para mostrarlos
+    $a = $_SESSION['a'];
+    $b = $_SESSION['b'];
 ?>
 <!DOCTYPE html>
 <html lang="es">

@@ -33,7 +33,8 @@
         </form>
         <?php
             if (isset($_SESSION['errorLogin'])) {
-                echo "<div class='alert alert-danger' role='alert>Usuario o contraseña desconocidos></div>";
+                echo "<div class='alert alert-danger mt-5' role='alert'>Usuario o contraseña desconocidos</div>";
+                unset($_SESSION['errorLogin']);
             }
         ?>
     </div>
