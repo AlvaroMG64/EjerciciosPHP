@@ -105,6 +105,7 @@
 <body class="p-5">
 
     <div class="container w-75">
+    <h1>Uso de Interfaces</h1>
 
     <h2>Bombilla</h2>
     <?= $bombilla ?>

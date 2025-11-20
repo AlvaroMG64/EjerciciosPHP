@@ -15,7 +15,7 @@
     $socios = [
         [
             "nombre" => "Ana",
-            "apellidos" => "Pérez López",
+            "apellidos" => "García Sánchez",
             "edad" => 28
         ],
         [
@@ -25,7 +25,7 @@
         ],
         [
             "nombre" => "Clara",
-            "apellidos" => "Gómez Díaz",
+            "apellidos" => "Herrera Díaz",
             "edad" => 22
         ],
     ];
