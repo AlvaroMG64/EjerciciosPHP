@@ -39,9 +39,9 @@
             return self::$numeroRest;
         }
 
-        public function getNombre() { return $this->nombre; }
-        public function getTipoCocina() { return $this->tipoCocina; }
-        public function getRatings() { return $this->ratings; }
+        public function getNombre(): string { return $this->nombre; }
+        public function getTipoCocina(): string { return $this->tipoCocina; }
+        public function getRatings(): array { return $this->ratings; }
     }
 
     $restaurantes = [];

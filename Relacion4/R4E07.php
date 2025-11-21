@@ -22,17 +22,17 @@
             return $html;
         }
 
-        public function invertirColores() {
+        public function invertirColores(): void {
             $this->franjas = array_reverse($this->franjas);
         }
 
-        public function invertirOrientacion() {
+        public function invertirOrientacion(): void {
             $this->orientacion = $this->orientacion == "horizontal" ? "vertical" : "horizontal";
         }
 
-        public function getFranjas() { return $this->franjas; }
-        public function getOrientacion() { return $this->orientacion; }
-        public function getAdscripcion() { return $this->adscripcion; }
+        public function getFranjas(): array { return $this->franjas; }
+        public function getOrientacion(): string { return $this->orientacion; }
+        public function getAdscripcion(): string { return $this->adscripcion; }
     }
 
     $banderas = [];

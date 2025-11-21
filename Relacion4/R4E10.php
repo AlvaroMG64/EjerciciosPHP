@@ -42,17 +42,17 @@
             $this->estado = $est;
         }
 
-        public function cargarGasolina(float $l) {
+        public function cargarGasolina(float $l): void {
             $this->gasolina += $l;
         }
 
-        public function encender() {
+        public function encender(): void {
             if ($this->bateria > 0 && $this->gasolina > 0) {
                 $this->estado = true;
             }
         }
 
-        public function apagar() { $this->estado = false; }
+        public function apagar(): void { $this->estado = false; }
 
         public function __toString(): string {
             $est = $this->estado ? "Encendida" : "Apagada";
