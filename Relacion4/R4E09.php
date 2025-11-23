@@ -39,9 +39,10 @@
         }
 
         public function depositar(float $cantidad): void {
-            if ($cantidad <= 0) return;
-            $this->saldo += $cantidad;
-            $this->numOperaciones++;
+            if ($cantidad > 0) {
+                $this->saldo += $cantidad;
+                $this->numOperaciones++;
+            }
         }
 
         abstract public function extraer(float $cantidad): bool;
@@ -53,14 +54,15 @@
             }
             return false;
         }
+
+        // Getters
+        public function getNumeroCuenta(): string { return $this->numeroCuenta; }
+        public function getTitular(): string { return $this->titular; }
     }
 
     class CuentaDebito extends CuentaBancaria {
-
         public function extraer(float $cantidad): bool {
-            if ($cantidad <= 0) return false;
-
-            if ($this->saldo >= $cantidad) {
+            if ($cantidad > 0 && $cantidad <= $this->saldo) {
                 $this->saldo -= $cantidad;
                 $this->numOperaciones++;
                 return true;
@@ -79,7 +81,6 @@
 
         public function extraer(float $cantidad): bool {
             if ($cantidad <= 0) return false;
-
             if (($this->saldo - $cantidad) >= -$this->limiteCredito) {
                 $this->saldo -= $cantidad;
                 $this->numOperaciones++;
@@ -95,26 +96,57 @@
         }
     }
 
-    // ======= PRUEBAS =======
-
+    // Inicializar cuentas
     $debito = new CuentaDebito("ES12 3456 7890", "Cuenta Débito – Ana");
     $credito = new CuentaCredito("ES98 7654 3210", "Cuenta Crédito – Luis", 500);
 
-    $debito->depositar(300);
-    $debito->extraer(50);
-    $debito->extraer(500); // NO (sin saldo)
+    // Manejo de operaciones vía formulario
+    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+        $operacion = $_POST['operacion'] ?? '';
+        $cuenta = $_POST['cuenta'] ?? '';
+        $cantidad = floatval($_POST['cantidad'] ?? 0);
 
-    $credito->depositar(200);
-    $credito->extraer(600); // Sí (queda en -400)
-
-    $credito->transferir(100, $debito); // OK
-
+        if ($cuenta === 'debito') {
+            if ($operacion === 'depositar') $debito->depositar($cantidad);
+            if ($operacion === 'extraer') $debito->extraer($cantidad);
+            if ($operacion === 'transferir') $debito->transferir($cantidad, $credito);
+        } elseif ($cuenta === 'credito') {
+            if ($operacion === 'depositar') $credito->depositar($cantidad);
+            if ($operacion === 'extraer') $credito->extraer($cantidad);
+            if ($operacion === 'transferir') $credito->transferir($cantidad, $debito);
+        }
+    }
     ?>
 
-    <h3 class="mt-4">Resultados</h3>
+    <div class="row">
+        <div class="col-md-6">
+            <h3>Cuenta Débito – Ana</h3>
+            <?= $debito ?>
+            <form method="post" class="mb-3">
+                <input type="hidden" name="cuenta" value="debito">
+                <div class="mb-2">
+                    <input type="number" step="0.01" name="cantidad" class="form-control" placeholder="Cantidad" required>
+                </div>
+                <button name="operacion" value="depositar" class="btn btn-success mb-1">Depositar</button>
+                <button name="operacion" value="extraer" class="btn btn-warning mb-1">Extraer</button>
+                <button name="operacion" value="transferir" class="btn btn-primary mb-1">Transferir a Crédito</button>
+            </form>
+        </div>
 
-    <?= $debito ?>
-    <?= $credito ?>
+        <div class="col-md-6">
+            <h3>Cuenta Crédito – Luis</h3>
+            <?= $credito ?>
+            <form method="post" class="mb-3">
+                <input type="hidden" name="cuenta" value="credito">
+                <div class="mb-2">
+                    <input type="number" step="0.01" name="cantidad" class="form-control" placeholder="Cantidad" required>
+                </div>
+                <button name="operacion" value="depositar" class="btn btn-success mb-1">Depositar</button>
+                <button name="operacion" value="extraer" class="btn btn-warning mb-1">Extraer</button>
+                <button name="operacion" value="transferir" class="btn btn-primary mb-1">Transferir a Débito</button>
+            </form>
+        </div>
+    </div>
 
     </div>
 </body>

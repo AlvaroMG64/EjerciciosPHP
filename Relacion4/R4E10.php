@@ -74,10 +74,16 @@
 
     // Reconstrucción desde POST
     if (isset($_POST['bombilla_serial'])) {
-        $bombilla = unserialize($_POST['bombilla_serial']);
+        $decoded = base64_decode($_POST['bombilla_serial'], true);
+        if ($decoded !== false) {
+            $bombilla = unserialize($decoded);
+        }
     }
     if (isset($_POST['moto_serial'])) {
-        $moto = unserialize($_POST['moto_serial']);
+        $decoded = base64_decode($_POST['moto_serial'], true);
+        if ($decoded !== false) {
+            $moto = unserialize($decoded);
+        }
     }
 
     // Acciones
@@ -111,8 +117,8 @@
     <?= $bombilla ?>
 
     <form method="post" class="mb-4">
-        <input type="hidden" name="bombilla_serial" value="<?= htmlspecialchars(serialize($bombilla)) ?>">
-        <input type="hidden" name="moto_serial" value="<?= htmlspecialchars(serialize($moto)) ?>">
+        <input type="hidden" name="bombilla_serial" value="<?= base64_encode(serialize($bombilla)) ?>">
+        <input type="hidden" name="moto_serial" value="<?= base64_encode(serialize($moto)) ?>">
         <button name="encender_bombilla" class="btn btn-success">Encender</button>
         <button name="apagar_bombilla" class="btn btn-warning">Apagar</button>
     </form>
@@ -121,8 +127,8 @@
     <?= $moto ?>
 
     <form method="post" class="mb-4">
-        <input type="hidden" name="bombilla_serial" value="<?= htmlspecialchars(serialize($bombilla)) ?>">
-        <input type="hidden" name="moto_serial" value="<?= htmlspecialchars(serialize($moto)) ?>">
+        <input type="hidden" name="bombilla_serial" value="<?= base64_encode(serialize($bombilla)) ?>">
+        <input type="hidden" name="moto_serial" value="<?= base64_encode(serialize($moto)) ?>">
 
         <input type="number" step="0.1" name="litros" placeholder="Litros" class="form-control mb-2">
         <button name="cargar_gasolina" class="btn btn-secondary mb-2">Cargar Gasolina</button>

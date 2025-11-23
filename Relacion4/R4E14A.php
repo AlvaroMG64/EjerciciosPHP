@@ -30,7 +30,7 @@
     <h3>Carrito convertido a JSON (almacenado en cookie):</h3>
     <pre><?= $json ?></pre>
 
-    <a class="btn btn-primary mt-3" href="verCarrito.php">Ir a la segunda página</a>
+    <a class="btn btn-primary mt-3" href="R4E14B.php">Ir a la segunda página</a>
 
     </div>
 </body>
