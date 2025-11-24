@@ -107,6 +107,7 @@
     <meta charset="UTF-8">
     <title>Relación 4 - Ejercicio 10</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="shortcut icon" href="playamar.png" type="image/x-icon">
 </head>
 <body class="p-5">
 
