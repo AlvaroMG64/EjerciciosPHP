@@ -760,5 +760,63 @@ spl_autoload_register(function($class){
 <li>Usar <code>final</code> para métodos que no deben sobreescribirse.</li>
 </ul>
 </section>
+
+<section id="isset-empty" class="mb-5">
+    <h2>isset() y empty()</h2>
+    <p>Las funciones <code>isset()</code> y <code>empty()</code> son fundamentales para la validación de variables en PHP.</p>
+
+    <h4>isset()</h4>
+    <p><code>isset()</code> determina si una variable está definida y no es <code>null</code>. Si la variable no ha sido inicializada o tiene el valor <code>null</code>, <code>isset()</code> devolverá <code>false</code>.</p>
+    <pre><code>&lt;?php
+    $a = "Hola";
+    if (isset($a)) {
+        echo "La variable \$a está definida y no es null.";
+    } else {
+        echo "La variable \$a no está definida o es null.";
+    }
+    ?&gt;</code></pre>
+    <ul>
+        <li><code>isset($variable)</code>: Devuelve <code>true</code> si la variable está definida y no es <code>null</code>.</li>
+        <li><code>isset()</code> devuelve <code>false</code> si la variable es <code>null</code> o no está definida.</li>
+    </ul>
+
+    <h4>empty()</h4>
+    <p><code>empty()</code> verifica si una variable está vacía. Una variable se considera vacía si no está definida, tiene un valor de <code>null</code>, una cadena vacía <code>""</code>, el valor entero <code>0</code>, un array vacío, entre otros.</p>
+    <pre><code>&lt;?php
+    $b = "";
+    if (empty($b)) {
+        echo "La variable \$b está vacía.";
+    } else {
+        echo "La variable \$b tiene un valor.";
+    }
+    ?&gt;</code></pre>
+    <ul>
+        <li><code>empty($variable)</code>: Devuelve <code>true</code> si la variable es vacía.</li>
+        <li><code>empty()</code> devuelve <code>false</code> si la variable contiene un valor distinto a los valores vacíos mencionados.</li>
+    </ul>
+
+    <h4>Diferencias clave entre <code>isset()</code> y <code>empty()</code></h4>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Función</th>
+                <th>Qué verifica</th>
+                <th>Valor de retorno cuando la variable es vacía</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><code>isset()</code></td>
+                <td>Verifica si la variable está definida y no es <code>null</code>.</td>
+                <td><code>false</code> si es <code>null</code> o no está definida.</td>
+            </tr>
+            <tr>
+                <td><code>empty()</code></td>
+                <td>Verifica si la variable tiene un valor vacío (null, "", 0, "0", false, array vacío).</td>
+                <td><code>true</code> si está vacía (ver lista de valores vacíos).</td>
+            </tr>
+        </tbody>
+    </table>
+</section>
 </body>
 </html>
